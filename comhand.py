@@ -1,8 +1,14 @@
 import os
 import discord
 import json
+import types
 
-
+class CrackComm:
+	def __init__(self, name, desc):
+		pass
+	
+	def Comm_Func():
+		pass
 async def command_handle(message):
 	commands = (OptIn, Test2)
 	isValid = False
@@ -46,3 +52,7 @@ def OptIn(message, **kwargs):
 def Test2(args):
 	print(f"Test2 args: {args}")
 
+def crackComm(func):
+	def wrapper():
+		x = CrackComm(func.__name__, "")
+		x.CommFunc = types.MethodType(func, x)
