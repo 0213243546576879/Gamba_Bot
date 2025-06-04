@@ -1,0 +1,11 @@
+#Virtual Environment
+.venv/
+
+#All of the user data
+user_data/*.json
+
+#I don't remember what it's for but probaby something
+Ball_Bag.json
+
+#other stuff
+config.json
