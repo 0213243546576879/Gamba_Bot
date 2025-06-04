@@ -9,3 +9,6 @@ Ball_Bag.json
 
 #other stuff
 config.json
+
+#Pycache shit
+__pycache__/
