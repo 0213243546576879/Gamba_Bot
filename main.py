@@ -1,8 +1,9 @@
-import os
 import json
 import discord
 import discord.ext
 from discord.ext import commands
+
+import comhand
 
 intents = discord.Intents.default()
 
@@ -23,27 +24,9 @@ async def on_message(message):
 
 	print("Message Recieved!")
 	if bot.user.mentioned_in(message):
-		await command_handle(message)
-
-
-
-
-
-def OptIn(**kwargs):
-	user = message.author.display_name
-	path = "/user_data/" + user
-	if(os.path.isfile(path)):
-		return 1
-	else:
-		with open(path, "w") as file:
-			data = {"user": user, "cryptoe": 100}
-			json.dump(data, file)
-		
-
-def Test2(args):
-	print(f"Test2 args: {args}")
-
+		await comhand.command_handle(message)
 
 with open("config.json", "r") as file:
-    token = json.load(file)[TOKEN]
-    bot.run(json.load(file)["TOKEN"])
+    input = json.loads(file.read())
+    print(input["TOKEN"])
+    bot.run(input["TOKEN"])
